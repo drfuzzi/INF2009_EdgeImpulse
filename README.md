@@ -1,5 +1,3 @@
----
-
 **Lab Manual: Data Analytics with Raspberry Pi 4 using LiDAR and Ultrasonic Sensors**
 
 **Objective:** By the end of this session, participants will be proficient in setting up and using LiDAR and ultrasonic sensors with Raspberry Pi 4 for data collection and basic analytics.
