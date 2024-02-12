@@ -1,6 +1,10 @@
-### Prerequisites:
-1. Raspberry Pi 400 with Raspberry Pi OS installed.
-2. Access to the internet for downloading necessary software and packages.
+### Guide on how to use Edge Impulse with the Raspberry Pi 400 + Webcam
+
+#### Materials Needed
+- Raspberry Pi 400
+- MicroSD card with Raspberry Pi OS
+- Logitech C310 HD Webcam
+- Internet connection (Mobile Hotspot)
 
 ### Steps:
 
@@ -40,7 +44,6 @@
    - You can confirm this works (the project will be listed) by logging into Edge Impulse with the created account.
 
 ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/ce054cee-507c-4086-8f68-974af72cce9b)
-
 
 5. **Data Acquisition: Acquire Sensor Data**:
    - Collect sensor data for your project. This can be done using a compatible sensor connected to your Raspberry Pi 400.
