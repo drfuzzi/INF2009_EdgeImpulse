@@ -65,10 +65,12 @@
   
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/8506572e-e37c-43cf-bb42-3b1ba01feaeb)
 
-   - Select `Create impulse` under `Impulse design`. Leave the rest as default (for now) and click on the green `Save Impulse` button.
+   - Select `Spectogram` under `Impulse design`. Select on `Generate features` (besides `Parameters`) and click on the blue `Generate features` button.  Wait till the `Job completed (success)` notification appears.
 
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/92316101-5cdf-49ec-bd85-ced8c0cca2ef)
 
+   - Select `NN Classifier` under `Impulse design`. Click on the green `Start training` button.  Ensure the target is Raspberry Pi 4 before pressing the green button.
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/f5c3031a-b1cb-4326-908d-5fdc9efcc605)
 
 
 10. **Train Model**:
