@@ -1,68 +1,76 @@
-**Data Analytics with Raspberry Pi 4 using LiDAR and Ultrasonic Sensors**
+### Prerequisites:
+1. Raspberry Pi 400 with Raspberry Pi OS installed.
+2. Access to the internet for downloading necessary software and packages.
 
-**Objective:** By the end of this session, participants will be proficient in setting up and using LiDAR and ultrasonic sensors with Raspberry Pi 4 for data collection and basic analytics.
+### Steps:
 
----
+1. **Create Edge Impulse Account**:
+   - Visit the [Edge Impulse website](https://studio.edgeimpulse.com/login) in your web browser.
+   - Click on "Sign Up" located below the Log in button.
+   - Fill out the registration form with your details.
+   - Finally Click on the "Sign Up" button to create your Edge Impulse account.
 
-**Prerequisites:**
-1. Raspberry Pi 4 with Raspbian OS installed.
-2. MicroSD card (16GB or more recommended).
-3. Internet connectivity (Wi-Fi).
-4. LiDAR sensor compatible with Raspberry Pi (e.g., RPLIDAR).
-5. Ultrasonic distance sensor (e.g., HC-SR04).
-6. Basic knowledge of Python and Linux commands.
+2. **Installing Edge Impulse on your Raspberry Pi 400**:
+   - Follow the guide [here](https://docs.edgeimpulse.com/docs/development-platforms/officially-supported-cpu-gpu-targets/raspberry-pi-4).
+   - You must use 64-bit OS with _aarch64; 64-bit version.
+   - Installing dependencies by running the following commands:
+    ```
+    sudo apt update
+    curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
+    sudo apt install -y gcc g++ make build-essential nodejs sox gstreamer1.0-tools gstreamer1.0-plugins-good gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps
+    sudo npm install edge-impulse-linux -g --unsafe-perm
+    ```
+     
+3. **Connecting to Edge Impulse**:
+   - With all dependencies setup, connect your webcam to your Raspberry Pi 400 (`sudo` is to ensure your devices can be accessed), and run:
+   ```
+   sudo edge-impulse-linux
+   ```
+   - Note that at this point, the images from the webcam can be captured but **does not work** during model training. Therefore, I would only suggest audio based tutorials.
+   - To join another project, use the following command: `sudo edge-impulse-linux --clean`.
+   - Enter the credential you use to sign up for Edge Impulse website.
+   - Select the project you would like to load (you will need to do step #4 before you may proceed)
+   - Select your webcam: `USB-Audio - USB Device 0x`.
+  
+4. **Clone Project**:
+   - You may create a clone of the following project [Tutorial: Responding to your voice](https://studio.edgeimpulse.com/public/14225/latest).
+   - You may follow the guide [here](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/responding-to-your-voice) for the above tutorial.
+   - Click on the "Clone this project" button located on the top right of the page.
+   - Click on the green "Clone project" button.
+   - You can confirm this works (the project will be listed) by logging into Edge Impulse with the created account.
 
----
+![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/ce054cee-507c-4086-8f68-974af72cce9b)
 
-**1. Introduction (10 minutes)**
-- Brief overview of LiDAR and Ultrasonic technology.
-- Applications and importance of these sensors in data analytics.
 
-**2. Setting up the Raspberry Pi (15 minutes)**
-- Booting up the Raspberry Pi.
-- Setting up Wi-Fi/Ethernet.
-- Basic Raspbian OS overview.
-- System updates:
-  ```bash
-  sudo apt update
-  sudo apt upgrade
-  ```
+5. **Data Acquisition: Acquire Sensor Data**:
+   - Collect sensor data for your project. This can be done using a compatible sensor connected to your Raspberry Pi 400.
+   - Follow the instructions provided by Edge Impulse to collect and label your sensor data.
+   - Ensure that Step #3 is successful and you will see a green dot as follows.
+  
+![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/669ba1b6-95bd-46e2-b1a7-0de8aa0a5f74)
 
-**3. Introduction to LiDAR with Raspberry Pi (20 minutes)**
-- Physical connection of the LiDAR sensor to Raspberry Pi.
-- Installing necessary drivers and libraries.
-- Basic code to collect data from LiDAR using Python.
-- Visualizing raw LiDAR data.
 
-**4. Introduction to Ultrasonic Sensors with Raspberry Pi (20 minutes)**
-- Physical connection of the ultrasonic sensor to Raspberry Pi using GPIO pins.
-- Understanding the working principle of ultrasonic sensors.
-- Writing a Python script to measure distance.
-- Real-time distance monitoring.
+10. **Train Model**:
+   - Once you have collected enough labeled data, train your machine learning model using Edge Impulse:
+     ```
+     edge-impulse-daemon
+     ```
+   - Follow the instructions to train your model using the collected data.
 
-**5. Data Analytics Basics (25 minutes)**
-- Storing sensor data in CSV format.
-- Introduction to Python libraries for analytics: Pandas and Matplotlib.
-- Reading and basic processing of data using Pandas.
-- Visualizing data trends using Matplotlib.
+11. **Deploy Model to Raspberry Pi 4**:
+   - Deploy your trained model to your Raspberry Pi 4:
+     ```
+     edge-impulse-run-impulse
+     ```
+   - Follow the prompts to download and deploy the model to your Raspberry Pi 4.
 
-**6. Integrating Both Sensors (25 minutes)**
-- Combining LiDAR and ultrasonic data.
-- Developing a simple application, e.g., object detection or room mapping.
-- Analyzing and visualizing the combined data.
+11. **Interact with Model**:
+   - Use the deployed model on your Raspberry Pi 4 to perform inference on new sensor data.
+   - Follow the instructions provided by Edge Impulse to interact with your deployed model.
 
----
+### Additional Resources:
+- [Edge Impulse Documentation](https://docs.edgeimpulse.com/)
+- [Edge Impulse Community Forum](https://forum.edgeimpulse.com/)
+- [Raspberry Pi Documentation](https://www.raspberrypi.org/documentation/)
 
-**Homework/Extended Activities:**
-1. Develop a room mapping application using LiDAR data.
-2. Build an obstacle avoidance system using the ultrasonic sensor.
-3. Dive deeper into advanced data analytics and visualization techniques.
-
----
-
-**Resources:**
-1. Raspberry Pi official documentation.
-2. RPLIDAR official documentation and SDK.
-3. Python Pandas and Matplotlib documentation.
-
----
+By following these steps, you'll be able to create an Edge Impulse account, set up, and use Edge Impulse on your Raspberry Pi 4 for collecting sensor data, training machine learning models, and deploying them for inference on-device.
