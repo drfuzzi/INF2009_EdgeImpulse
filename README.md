@@ -76,7 +76,7 @@
    - Wait till the `Job completed (success)` notification to appear.
 
 
-11. **Deploy Model to Raspberry Pi 400**:
+7. **Deploy Model to Raspberry Pi 400**:
    - Press Ctrl-C to stop the script on the Raspberry Pi 400.
    - Deploy your trained model to your Raspberry Pi 400 by executing the following command:
      ```
@@ -84,7 +84,7 @@
      ```
    - Follow the prompts to download and deploy the model to your Raspberry Pi 400.
 
-11. **Interact with Model**:
+8. **Interact with Model**:
    - The model will be deployed immediately and the microphone will feed all the sounds to the model.
    - Follow the is a sample of the output:
    ```
