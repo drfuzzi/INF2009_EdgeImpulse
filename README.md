@@ -37,8 +37,8 @@
    - Select your webcam: `USB-Audio - USB Device 0x`.
   
 4. **Clone Project**:
-   - You may create a clone of the following project [Tutorial: Responding to your voice](https://studio.edgeimpulse.com/public/14225/latest).
-   - You may follow the guide [here](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/responding-to-your-voice) for the above tutorial.
+   - You may create a clone of the following project [Tutorial: Recognize sounds from audio](https://studio.edgeimpulse.com/studio/348213).
+   - You may follow the guide [here](https://docs.edgeimpulse.com/docs/tutorials/end-to-end-tutorials/audio-classification) for the above tutorial.
    - Click on the "Clone this project" button located on the top right of the page.
    - Click on the green "Clone project" button.
    - You can confirm this works (the project will be listed) by logging into Edge Impulse with the created account.
