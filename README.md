@@ -61,6 +61,8 @@
 
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/e9a80513-df54-4c21-94eb-f6c5b6302cdb)
 
+6. **Training the Model**:
+
    - Select `Create impulse` under `Impulse design`. Leave the rest as default (for now) and click on the green `Save Impulse` button.
   
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/8506572e-e37c-43cf-bb42-3b1ba01feaeb)
@@ -70,30 +72,27 @@
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/92316101-5cdf-49ec-bd85-ced8c0cca2ef)
 
    - Select `NN Classifier` under `Impulse design`. Click on the green `Start training` button.  Ensure the target is Raspberry Pi 4 before pressing the green button.
-   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/f5c3031a-b1cb-4326-908d-5fdc9efcc605)
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/9243b481-f48f-4050-9eee-cdb5ab6971cb)
+   - Wait till the `Job completed (success)` notification to appear.
 
 
-10. **Train Model**:
-   - Once you have collected enough labeled data, train your machine learning model using Edge Impulse:
+11. **Deploy Model to Raspberry Pi 400**:
+   - Press Ctrl-C to stop the script on the Raspberry Pi 400.
+   - Deploy your trained model to your Raspberry Pi 400 by executing the following command:
      ```
-     edge-impulse-daemon
+     sudo edge-impulse-linux-runner
      ```
-   - Follow the instructions to train your model using the collected data.
-
-11. **Deploy Model to Raspberry Pi 4**:
-   - Deploy your trained model to your Raspberry Pi 4:
-     ```
-     edge-impulse-run-impulse
-     ```
-   - Follow the prompts to download and deploy the model to your Raspberry Pi 4.
+   - Follow the prompts to download and deploy the model to your Raspberry Pi 400.
 
 11. **Interact with Model**:
-   - Use the deployed model on your Raspberry Pi 4 to perform inference on new sensor data.
-   - Follow the instructions provided by Edge Impulse to interact with your deployed model.
-
-### Additional Resources:
-- [Edge Impulse Documentation](https://docs.edgeimpulse.com/)
-- [Edge Impulse Community Forum](https://forum.edgeimpulse.com/)
-- [Raspberry Pi Documentation](https://www.raspberrypi.org/documentation/)
-
-By following these steps, you'll be able to create an Edge Impulse account, set up, and use Edge Impulse on your Raspberry Pi 4 for collecting sensor data, training machine learning models, and deploying them for inference on-device.
+   - The model will be deployed immediately and the microphone will feed all the sounds to the model.
+   - Follow the is a sample of the output:
+   ```
+   classifyRes 1ms. { faucet: '0.2963', noise: '0.7037' }
+   classifyRes 1ms. { faucet: '0.0533', noise: '0.9467' }
+   classifyRes 1ms. { faucet: '0.0371', noise: '0.9629' }
+   classifyRes 1ms. { faucet: '0.0231', noise: '0.9769' }
+   classifyRes 1ms. { faucet: '0.0231', noise: '0.9769' }
+   classifyRes 1ms. { faucet: '0.0136', noise: '0.9864' }
+   ```
+   - The model is classifying input data into two categories: "faucet" and "noise". The numbers associated with each category represent the model's confidence score or probability estimation for each class. In the first example, the model predicts with a probability of approximately 29.63% that the input belongs to the "faucet" class and approximately 70.37% that it belongs to the "noise" class. In addition, the classification result was obtained in 1 millisecond.
