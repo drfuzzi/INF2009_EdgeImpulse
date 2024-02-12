@@ -43,14 +43,19 @@
    - Click on the green "Clone project" button.
    - You can confirm this works (the project will be listed) by logging into Edge Impulse with the created account.
 
-![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/ce054cee-507c-4086-8f68-974af72cce9b)
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/ce054cee-507c-4086-8f68-974af72cce9b)
 
 5. **Data Acquisition: Acquire Sensor Data**:
    - Collect sensor data for your project. This can be done using a compatible sensor connected to your Raspberry Pi 400.
    - Follow the instructions provided by Edge Impulse to collect and label your sensor data.
    - Ensure that Step #3 is successful and you will see a green dot as follows.
   
-![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/669ba1b6-95bd-46e2-b1a7-0de8aa0a5f74)
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/669ba1b6-95bd-46e2-b1a7-0de8aa0a5f74)
+
+   - Select `Microphone` and the appropriate sample length before clicking on `Start sampling` button.
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/4c0b94cb-1bc5-44f5-8bdc-3315d5ef6a84)
+
+   - A new data will be included into the dataset. This dataset can be split into smaller samples if necessary.
 
 
 10. **Train Model**:
