@@ -56,6 +56,19 @@
    ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/4c0b94cb-1bc5-44f5-8bdc-3315d5ef6a84)
 
    - A new data will be included into the dataset. This dataset can be split into smaller samples if necessary.
+   - The tutorial have included 2 types of data; noise and faucet. You may include a third one. However, you will have you incorporate significantly more data for the model to be able to identify the new category well.
+   - You will also be required to split the training and testing dataset as shown below:
+
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/e9a80513-df54-4c21-94eb-f6c5b6302cdb)
+
+   - Select `Create impulse` under `Impulse design`. Leave the rest as default (for now) and click on the green `Save Impulse` button.
+  
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/8506572e-e37c-43cf-bb42-3b1ba01feaeb)
+
+   - Select `Create impulse` under `Impulse design`. Leave the rest as default (for now) and click on the green `Save Impulse` button.
+
+   ![image](https://github.com/drfuzzi/INF2009_EdgeImpulse/assets/108112390/92316101-5cdf-49ec-bd85-ced8c0cca2ef)
+
 
 
 10. **Train Model**:
